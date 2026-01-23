@@ -1,51 +1,12 @@
+\subsection{研究基础}
+项目负责人长期从事SPH方法在水动力学、多物理场耦合及复杂自由界面问题中的算法研究与应用开发，在高精度SPH算法构建、自由液面追踪及流固耦合建模等方面已形成较为系统的研究基础。围绕数值一致性、稳定性与收敛性问题，先后开展多项方法改进研究，并在多类海洋流固耦合与复杂自由界面算例中得到验证，如图3所示，为本项目聚焦的跨介质入水数值稳定性问题提供了直接的方法与经验支撑。
 
+项目负责人主持并主导开发了基于SPH方法的多物理场开源计算软件平台SPHinXsys。该平台采用模块化架构设计，支持粒子–网格混合建模及CPU/GPU并行计算，如图6所示，已成功应用于复杂边界处理、水弹相互作用、多刚体动力学耦合及流固热耦合等多类问题，具有良好的稳定性与可扩展性。项目组具备从算法设计、程序实现到算例验证与平台集成的完整技术能力，可为本项目中多种稳定性改进算法的实现与对比验证提供统一、可靠的软件支撑。
+%
+\subsection{可行性分析}
+\textbf{路线A可用于宏观两相分布与传热趋势预测，但在液氢/氢气强物性比与强温差条件下，界面厚度与物性平滑会引入额外模型参数，使相变通量与表面张力平衡对数值正则化敏感；因此本项目选择路线B，以尖锐界面分离式耦合在离散层面构建热力学一致闭合与多时间尺度可计算框架。}
 
-这里可能需要列出自己的相关文章。由于文章和依据部分的文献的格式并不一定一致，建议使用下边方法：
-\begin{lstlisting}[language=tex, basicstyle=\ttfamily\tiny, keywordstyle=\color{blue}, commentstyle=\color{gray}]
-	\begin{thebibliography}{1}
-		\bibitem{test}
-		\bibauthor{\textbf{C\"aldognetto T\@, Tenti P}}\@. 
-		\bibtitle{Microgrids Operation Based on Master–Slave Cooperative Control}
-		\bibmark{[J]}\@.
-		\bibjournal{IEEE Journal of Emerging and Selected Topics in Power Electronics}\@,
-		\bibvolume{2}\bibnumber{(4)}\thinspace{}\textnormal{:}
-		\bibpages{1081\thinspace{}\textnormal{--}\thinspace{}1088}\@,
-		\bibyear{2014}\@.
-		\url{doi: 10.1109/JESTPE.2014.2345052}\@.
-	\end{thebibliography}
-\end{lstlisting}
-效果如下。这个东西从哪里来的呢？从编译产生的\verb|.bbl|文件中拷贝过来放进来，就可以了。
-%\vspace{-50pt}
-%\begin{thebibliography}{1}
-%	\providecommand{\bibauthor}[1]{#1}
-%	\providecommand{\bibeditor}[1]{#1}
-%	\providecommand{\bibtranslator}[1]{#1}
-%	\providecommand{\bibtitle}[1]{#1}
-%	\providecommand{\bibbooktitle}[1]{#1}
-%	\providecommand{\bibjournal}[1]{#1}
-%	\providecommand{\bibmark}[1]{#1}
-%	\providecommand{\bibcountry}[1]{#1}
-%	\providecommand{\bibpatentid}[1]{#1}
-%	\providecommand{\bibedition}[1]{#1}
-%	\providecommand{\biborganization}[1]{#1}
-%	\providecommand{\bibaddress}[1]{#1}
-%	\providecommand{\bibpublisher}[1]{#1}
-%	\providecommand{\bibinstitution}[1]{#1}
-%	\providecommand{\bibschool}[1]{#1}
-%	\providecommand{\bibvolume}[1]{#1}
-%	\providecommand{\bibnumber}[1]{#1}
-%	\providecommand{\bibversion}[1]{#1}
-%	\providecommand{\bibpages}[1]{#1}
-%	\providecommand{\bibmodifydate}[1]{#1}
-%	\providecommand{\bibcitedate}[1]{#1}
-%	\providecommand{\bibyear}[1]{#1}
-%	\providecommand{\bibdate}[1]{#1}
-%	\providecommand{\biburl}[1]{\newline\url{#1}}
-%	\bibitem{test}
-%	\bibauthor{\textbf{C\"aldognetto T\@, Tenti P}}\@. \bibtitle{Microgrids Operation Based
-%		on Master–Slave Cooperative Control}\bibmark{[J/OL]}\@. \bibjournal{IEEE
-%		Journal of Emerging and Selected Topics in Power Electronics}\@,
-%	\bibvolume{2}\bibnumber{(4)}\thinspace{}\textnormal{:
-%	}\bibpages{1081\thinspace{}\textnormal{--}\thinspace{}1088}\@,
-%	\bibyear{2014}\@. \url{doi: 10.1109/JESTPE.2014.2345052}\@.
-%\end{thebibliography}
+\textbf{沸腾相变的难点不只在流场，更在热/质传递离散的稳定性与收敛性；
+	已有多物理SPH工作通过 Stefan/自然对流等基准验证了热-相变模块的可靠实现，
+	为本项目构建更复杂气液相变框架提供方法基础。}
+
