@@ -91,6 +91,13 @@
 	AutoFakeSlant=0.3,
 	AutoFakeBold=3,
 	]{simkai.ttf}
+% 黑体
+\setCJKfamilyfont{WINhei}[
+  Path=./fonts/,
+  AutoFakeSlant=0.3,
+  AutoFakeBold=3,
+]{SimHei.ttf}
+\newcommand{\zhhei}{\CJKfamily{WINhei}}
 %微软宋体
 \setCJKfamilyfont{WINsong}[%中文
 	Path=./fonts/,
@@ -203,7 +210,7 @@ AutoFakeBold=3,
     \refstepcounter{section}\begingroup
 	\ifinMS%判断是否在MS中
 		\color{HighLight}
-		\MSzh\MSen\fontsize{14.2pt}{22pt}\selectfont%
+		\zhkai\MSen\fontsize{14.2pt}{22pt}\selectfont\bfseries
 	\else
 		\color{NSFblue}
 		\zhkai\enkai\fontsize{14.2pt}{22pt}\selectfont%
@@ -227,8 +234,8 @@ AutoFakeBold=3,
 \renewcommand\subsection{\@ifstar{\starsubsection}{\nostarsubsection}}
 \newcommand\nostarsubsection[1]{%
     \refstepcounter{subsection}\begingroup\color{HighLight}
-    \vspace{6pt}
-    \MSzh\MSen\fontsize{13pt}{22pt}\selectfont%\bfseries%
+    \vspace{2pt}
+    \zhkai\MSen\fontsize{13pt}{22pt}\selectfont\bfseries%
     \setlength{\baselineskip}{22pt}%最后设置，防止被fontsize中的覆盖
     \par\indent\hspace{3pt}\arabic{section}.\arabic{subsection}#1\par
     \vspace{2pt}
@@ -330,15 +337,15 @@ AutoFakeBold=3,
 \crefformat{equation}{式~（#2#1#3）}
 \usepackage[figurewithin=none]{caption}
 %图题、表头；若想取消加粗，去掉\bfseries
-\DeclareCaptionFont{capfont}{\MSzh\ensong\fontsize{11pt}{22pt}\selectfont\bfseries} % Caption font
-\DeclareCaptionFont{subfont}{\MSzh\ensong\fontsize{11pt}{22pt}\selectfont\bfseries} % Sub-caption font
+\DeclareCaptionFont{capfont}{\zhhei\ensong\fontsize{11pt}{22pt}\selectfont\bfseries}%} % Caption font
+\DeclareCaptionFont{subfont}{\zhhei\ensong\fontsize{1pt}{22pt}\selectfont\bfseries}%} % Sub-caption font
 \captionsetup{font = capfont}
 \captionsetup[subfigure]{font = subfont}
 \captionsetup[figure]{labelsep=period}
 \captionsetup[table]{labelsep=period}
 
 %图标标题的上下间距
-\setlength{\abovecaptionskip}{0pt}  % 修改 caption 与图表上方的距离
+\setlength{\abovecaptionskip}{2pt}  % 修改 caption 与图表上方的距离
 \setlength{\belowcaptionskip}{-10pt} % 修改 caption 与正文的距离
 
 
@@ -441,7 +448,7 @@ AutoFakeBold=3,
 	\setlength{\baselineskip}{15pt}}
 	{\endgroup}
 \renewcommand{\bibfont}{%
-	\MSzh\ensong\fontsize{9pt}{18pt}\selectfont%
+	\MSzh\ensong\fontsize{9.7pt}{18pt}\selectfont%
 	\setlength{\baselineskip}{12pt}}
 
 \renewcommand{\ttfamily}{\ensong\selectfont}%参考文献中的链接字体用的是texttt
