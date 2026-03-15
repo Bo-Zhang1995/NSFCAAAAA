@@ -345,9 +345,8 @@ AutoFakeBold=3,
 \captionsetup[table]{labelsep=period}
 
 %图标标题的上下间距
-\setlength{\abovecaptionskip}{2pt}  % 修改 caption 与图表上方的距离
-\setlength{\belowcaptionskip}{-12pt} % 修改 caption 与正文的距离
-
+\setlength{\abovecaptionskip}{4pt}  % 修改 caption 与图表上方的距离
+\setlength{\belowcaptionskip}{-14pt} % 修改 caption 与正文的距离
 
 %全局：跨越多个Chapter的图/表/公式的计数
 \def\cl@chapter{%
@@ -407,7 +406,7 @@ AutoFakeBold=3,
 
 \usepackage{enumitem}%有序列表
 \setenumerate[1]{itemsep = 0pt, parsep = 0pt, topsep = 2bp}
-\setitemize[1]{itemsep = -2pt, parsep = 0pt, topsep = 2bp}
+\setitemize[1]{itemsep = 0pt, parsep = 0pt, topsep = 0bp}
 %------------------------
 %程序代码
 %------------------------
@@ -448,8 +447,8 @@ AutoFakeBold=3,
 	\setlength{\baselineskip}{15pt}}
 	{\endgroup}
 \renewcommand{\bibfont}{%
-	\MSzh\ensong\fontsize{11.5pt}{22pt}\selectfont%
-	\setlength{\baselineskip}{12pt}}
+	\MSzh\ensong\fontsize{11pt}{22pt}\selectfont%
+	\setlength{\baselineskip}{11.6pt}}
 
 \renewcommand{\ttfamily}{\ensong\selectfont}%参考文献中的链接字体用的是texttt
 
